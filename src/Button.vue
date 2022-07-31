@@ -16,7 +16,11 @@ export default {
     icon: {},
     iconPosition: {
       type: String,
-      default: 'left'
+      default: 'left',
+      validator(value) {
+        const validValue = ['left', 'right']
+        return validValue.includes(value)
+      }
     }
   }
 }
