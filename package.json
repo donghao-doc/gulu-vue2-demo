@@ -15,5 +15,8 @@
     "UI"
   ],
   "author": "BarryDong",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.7.8"
+  }
 }
