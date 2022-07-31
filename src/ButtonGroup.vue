@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: 'ButtonGroup'
+  name: 'ButtonGroup',
+  mounted() {
+    for (let node of this.$el.children) {
+      const tagName = node.nodeName.toLowerCase()
+      if (tagName !== 'button') {
+        console.warn(`g-button-group 的子元素应该全是 g-button，但是你写了 ${tagName}`)
+      }
+    }
+  }
 }
 </script>
 
