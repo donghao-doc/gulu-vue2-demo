@@ -1,5 +1,5 @@
 <template>
-  <svg class="g-icon" aria-hidden="true">
+  <svg :class="['g-icon', {'loading': name === 'loading'}]" aria-hidden="true">
     <use :xlink:href="`#i-${name}`"></use>
   </svg>
 </template>
@@ -27,5 +27,10 @@ export default {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  &.loading { animation: spin 1s linear infinite; }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 }
 </style>
