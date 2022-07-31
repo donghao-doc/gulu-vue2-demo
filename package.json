@@ -1,0 +1,19 @@
+{
+  "name": "gulu-vue2",
+  "version": "0.0.1",
+  "description": "用 Vue2 做的 UI 框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/barrydong/gulu-vue2.git"
+  },
+  "keywords": [
+    "Vue",
+    "UI"
+  ],
+  "author": "BarryDong",
+  "license": "MIT"
+}
