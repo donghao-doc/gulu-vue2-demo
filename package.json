@@ -18,5 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "vue": "^2.7.8"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
