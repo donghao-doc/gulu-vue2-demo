@@ -40,7 +40,7 @@ export default {
   &:hover { border-color: var(--border-color-hover); }
   &:active { background: var(--button-bg-active); }
   &:focus { outline: none; }
-  &.icon-left {
+  &, &.icon-left {
     > .icon { order: 1; margin-right: .2em; }
     > .content { order: 2; }
   }
