@@ -23,6 +23,8 @@ new Vue({
  * 单元测试
  */
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 const { expect } = chai
 
 {
@@ -97,20 +99,19 @@ const { expect } = chai
   vc.$destroy()
 }
 
-// {
-//   // Button 组件 - click 事件
-//   const Constructor = Vue.extend(Button)
-//   const vc = new Constructor({
-//     propsData: {
-//       icon: 'settings',
-//     },
-//   })
-//   vc.$mount()
-//   vc.$on('click', function () {
-//     console.log(1)
-//   })
-//   const button = vc.$el
-//   button.click()
-//   vc.$el.remove()
-//   vc.$destroy()
-// }
+{
+  // Button 组件 - click 事件
+  const Constructor = Vue.extend(Button)
+  const vc = new Constructor({
+    propsData: {
+      icon: 'settings',
+    },
+  })
+  vc.$mount()
+  const spy = chai.spy(() => {})
+  vc.$on('click', spy)
+  vc.$el.click()
+  expect(spy).to.have.been.called()
+  vc.$el.remove()
+  vc.$destroy()
+}
