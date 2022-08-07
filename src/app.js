@@ -18,5 +18,19 @@ new Vue({
     loading1: false,
     loading2: true,
     loading3: false
+  },
+  methods: {
+    onInput(event) {
+      console.log(event.target.value)
+    },
+    onChange(event) {
+      console.log(event.target.value)
+    },
+    onFocus(event) {
+      console.log(event.target.value)
+    },
+    onBlur(event) {
+      console.log(event.target.value)
+    }
   }
 })
