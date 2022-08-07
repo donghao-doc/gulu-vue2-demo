@@ -4,6 +4,7 @@
   "description": "用 Vue2 做的 UI 框架",
   "main": "dist/index.js",
   "scripts": {
+    "start": "parcel index.html --no-cache",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
     "dev-test": "parcel watch test/* --no-cache & karma start"
   },
