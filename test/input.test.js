@@ -70,10 +70,17 @@ describe('Input', () => {
         const vm = new Constructor({}).$mount()
         const callback = sinon.fake()
         vm.$on(eventName, callback)
+        // 手动触发事件
         const event = new Event(eventName)
+        // 通过数据代理，给 event 对象新增一个 target 属性
+        Object.defineProperty(event, 'target', {
+          value: { value: 'hello' },
+          enumerable: true
+        })
         const inputElement = vm.$el.querySelector('input')
         inputElement.dispatchEvent(event)
-        expect(callback).to.have.been.calledWith(event)
+        // 期待回调函数被调用并且传了一个参数 'hello'
+        expect(callback).to.have.been.calledWith('hello')
         vm.$destroy()
       })
     })
