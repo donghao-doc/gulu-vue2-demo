@@ -19,21 +19,39 @@
       --border-radius: 4px;
     }
     body { font-size: var(--font-size); padding: 20px; }
+    section { margin-bottom: 20px; }
   </style>
 </head>
 <body>
   <div id="app">
-    <g-icon name="loading"></g-icon>
-    <g-icon name="download"></g-icon>
-    <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-    <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">按钮1</g-button>
-    <g-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮2</g-button>
-    <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮3</g-button>
-    <g-button-group>
-      <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
+
+    <!-- icon -->
+    <section>
+      <g-icon name="loading"></g-icon>
+      <g-icon name="download"></g-icon>
+    </section>
+
+    <!-- button -->
+    <section>
+      <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+      <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">按钮1</g-button>
+      <g-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮2</g-button>
+      <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮3</g-button>
+      <g-button-group>
+        <g-button icon="left">上一页</g-button>
+        <g-button>更多</g-button>
+        <g-button icon="right" icon-position="right">下一页</g-button>
+      </g-button-group>
+    </section>
+
+    <!-- input -->
+    <section>
+      <g-input value="张三"></g-input>
+      <g-input value="张三" :disabled="true"></g-input>
+      <g-input value="张三" :readonly="true"></g-input>
+      <g-input value="张三" error="错误"></g-input>
+    </section>
+
   </div>
 
   <script src="./src/app.js"></script>
