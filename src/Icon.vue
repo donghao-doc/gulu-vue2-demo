@@ -14,7 +14,7 @@ export default {
     const iconfontScript = document.querySelector('script[data-ref]')
     if (iconfontScript && iconfontScript.dataset.ref === 'iconScript') return
     const script = document.createElement('script')
-    script.src = '//at.alicdn.com/t/font_718972_1hhoomwpb69.js'
+    script.src = '//at.alicdn.com/t/font_718972_a5614fly5or.js'
     script.dataset.ref = 'iconScript'
     document.body.append(script)
   }
