@@ -58,6 +58,36 @@
       <p>{{ message }}</p>
     </section>
 
+    <!-- 栅格系统 -->
+    <section>
+      <g-row>
+        <g-col></g-col>
+        <g-col></g-col>
+      </g-row>
+      <g-row>
+        <g-col></g-col>
+        <g-col></g-col>
+        <g-col></g-col>
+      </g-row>
+      <g-row>
+        <g-col span="2"></g-col>
+        <g-col span="22"></g-col>
+      </g-row>
+      <g-row>
+        <g-col :span="4"></g-col>
+        <g-col :span="20"></g-col>
+      </g-row>
+      <g-row>
+        <g-col span="2"></g-col>
+        <g-col span="20" offset="2"></g-col>
+      </g-row>
+      <g-row>
+        <g-col span="4"></g-col>
+        <g-col span="10" :offset="2"></g-col>
+        <g-col span="4" :offset="4"></g-col>
+      </g-row>
+    </section>
+
   </div>
 
   <script src="./src/app.js"></script>
