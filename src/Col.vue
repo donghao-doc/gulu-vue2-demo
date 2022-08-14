@@ -1,13 +1,5 @@
 <template>
-  <div
-    :style="{paddingLeft: `${gutter}px`, paddingRight: `${gutter}px`}"
-    :class="[
-      'g-col',
-      span && `col-${span}`, offset && `offset-${offset}`,
-      pad && `col-pad-${pad.span}`,
-      narrowPc && `col-narrowPc-${narrowPc.span}`, pc && `col-pc-${pc.span}`, widePc && `col-widePc-${widePc.span}`
-    ]"
-  >
+  <div :style="{paddingLeft: `${gutter}px`, paddingRight: `${gutter}px`}" :class="colClass" class="g-col">
     <slot></slot>
   </div>
 </template>
@@ -38,6 +30,22 @@ export default {
   data() {
     return {
       gutter: 0
+    }
+  },
+  computed: {
+    colClass() {
+      const {span, offset, pad, narrowPc, pc, widePc} = this
+      const createClasses = (obj, model = '') => {
+        const arr = []
+        if (!obj) return arr
+        if (obj.span) arr.push(`col-${model}${obj.span}`)
+        if (obj.offset) arr.push(`offset-${model}${obj.offset}`)
+        return arr
+      }
+      return [
+        ...createClasses({span, offset}), ...createClasses(pad, 'pad-'),
+        ...createClasses(narrowPc, 'narrowPc-'), ...createClasses(pc, 'pc-'), ...createClasses(widePc, 'widePc-'),
+      ]
     }
   },
   created() {

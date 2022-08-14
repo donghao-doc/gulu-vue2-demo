@@ -33,47 +33,71 @@
   <div id="app">
 
     <!-- icon -->
-    <section>
-      <g-icon name="loading"></g-icon>
-      <g-icon name="download"></g-icon>
-    </section>
+    <!--<section>-->
+    <!--  <g-icon name="loading"></g-icon>-->
+    <!--  <g-icon name="download"></g-icon>-->
+    <!--</section>-->
 
     <!-- button -->
-    <section>
-      <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-      <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">按钮1</g-button>
-      <g-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮2</g-button>
-      <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮3</g-button>
-      <g-button-group>
-        <g-button icon="left">上一页</g-button>
-        <g-button>更多</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-      </g-button-group>
-    </section>
+    <!--<section>-->
+    <!--  <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>-->
+    <!--  <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">按钮1</g-button>-->
+    <!--  <g-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮2</g-button>-->
+    <!--  <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮3</g-button>-->
+    <!--  <g-button-group>-->
+    <!--    <g-button icon="left">上一页</g-button>-->
+    <!--    <g-button>更多</g-button>-->
+    <!--    <g-button icon="right" icon-position="right">下一页</g-button>-->
+    <!--  </g-button-group>-->
+    <!--</section>-->
 
     <!-- input -->
-    <section>
-      <g-input value="张三" :disabled="true"></g-input>
-      <g-input value="张三" :readonly="true"></g-input>
-      <g-input value="张三" error="错误"></g-input>
-      <g-input value="测试input" @input="onInput"></g-input>
-      <g-input value="测试change" @change="onChange"></g-input>
-      <g-input value="测试focus" @focus="onFocus"></g-input>
-      <g-input value="测试blur" @blur="onBlur"></g-input>
-      <g-input v-model="message"></g-input>
-      <!--<g-input :value="message" @input="message = $event"></g-input>-->
-      <p>{{ message }}</p>
-    </section>
+    <!--<section>-->
+    <!--  <g-input value="张三" :disabled="true"></g-input>-->
+    <!--  <g-input value="张三" :readonly="true"></g-input>-->
+    <!--  <g-input value="张三" error="错误"></g-input>-->
+    <!--  <g-input value="测试input" @input="onInput"></g-input>-->
+    <!--  <g-input value="测试change" @change="onChange"></g-input>-->
+    <!--  <g-input value="测试focus" @focus="onFocus"></g-input>-->
+    <!--  <g-input value="测试blur" @blur="onBlur"></g-input>-->
+    <!--  <g-input v-model="message"></g-input>-->
+    <!--  &lt;!&ndash;<g-input :value="message" @input="message = $event"></g-input>&ndash;&gt;-->
+    <!--  <p>{{ message }}</p>-->
+    <!--</section>-->
 
     <!-- 栅格系统 -->
     <section>
       <g-row>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+      </g-row>
+      <br>
+      <g-row>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8, offset: 4}">
+          <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 4, offset: 4}">
+          <div class="demo"></div>
+        </g-col>
       </g-row>
       <!--<g-row align="center">-->
       <!--  <g-col style="width: 100px">1</g-col>-->
