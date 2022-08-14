@@ -26,6 +26,7 @@ export default {
 <style scoped lang="scss">
 .g-row {
   display: flex;
+  flex-wrap: wrap;
   &.align-center { justify-content: center; }
   &.align-right { justify-content: right; }
 }
