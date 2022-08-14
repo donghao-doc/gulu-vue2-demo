@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'Input',
+  name: 'GInput',
   props: {
     value: { type: String },
     disabled: { type: Boolean, default: false },

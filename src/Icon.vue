@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Icon',
+  name: 'GIcon',
   props: {
     name: { type: String, required: true }
   },
