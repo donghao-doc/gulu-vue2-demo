@@ -21,6 +21,13 @@
     body { font-size: var(--font-size); padding: 20px; }
     section { margin-bottom: 20px; }
   </style>
+  <style>
+    .demo {
+      height: 50px;
+      background: #ddd;
+      border: 1px solid #666;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -60,36 +67,44 @@
 
     <!-- 栅格系统 -->
     <section>
-      <g-row align="center">
-        <g-col style="width: 100px">1</g-col>
-        <g-col style="width: 100px">2</g-col>
+      <g-row>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
+        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}"><div class="demo"></div></g-col>
       </g-row>
-      <g-row gutter="20" align="center">
-        <g-col span="2" :pad="{span: 20}">1</g-col>
-        <g-col span="22" :pad="{span: 4}">2</g-col>
-      </g-row>
-      <g-row :gutter="20">
-        <g-col :span="2" :narrow-pc="{span: 4}" :pc="{span: 6}" :wide-pc="{span: 8}">1</g-col>
-        <g-col :span="20" :narrow-pc="{span: 16}" :pc="{span: 12}" :wide-pc="{span: 8}">2</g-col>
-        <g-col :span="2" :narrow-pc="{span: 4}" :pc="{span: 6}" :wide-pc="{span: 8}">3</g-col>
-      </g-row>
-      <g-row gutter="20">
-        <g-col span="2">1</g-col>
-        <g-col span="22">2</g-col>
-      </g-row>
-      <g-row :gutter="20">
-        <g-col :span="4">1</g-col>
-        <g-col :span="20">2</g-col>
-      </g-row>
-      <g-row gutter="20">
-        <g-col span="2">1</g-col>
-        <g-col span="20" offset="2">2</g-col>
-      </g-row>
-      <g-row gutter="20">
-        <g-col span="4">1</g-col>
-        <g-col span="10" :offset="2">2</g-col>
-        <g-col span="4" :offset="4">3</g-col>
-      </g-row>
+      <!--<g-row align="center">-->
+      <!--  <g-col style="width: 100px">1</g-col>-->
+      <!--  <g-col style="width: 100px">2</g-col>-->
+      <!--</g-row>-->
+      <!--<g-row gutter="20" align="center">-->
+      <!--  <g-col span="2" :pad="{span: 20}">1</g-col>-->
+      <!--  <g-col span="22" :pad="{span: 4}">2</g-col>-->
+      <!--</g-row>-->
+      <!--<g-row :gutter="20">-->
+      <!--  <g-col :span="2" :pc="{span: 6}" :wide-pc="{span: 8}">1</g-col>-->
+      <!--  <g-col :span="20" :pc="{span: 12}" :wide-pc="{span: 8}">2</g-col>-->
+      <!--  <g-col :span="2" :pc="{span: 6}" :wide-pc="{span: 8}">3</g-col>-->
+      <!--</g-row>-->
+      <!--<g-row gutter="20">-->
+      <!--  <g-col span="2">1</g-col>-->
+      <!--  <g-col span="22">2</g-col>-->
+      <!--</g-row>-->
+      <!--<g-row :gutter="20">-->
+      <!--  <g-col :span="4">1</g-col>-->
+      <!--  <g-col :span="20">2</g-col>-->
+      <!--</g-row>-->
+      <!--<g-row gutter="20">-->
+      <!--  <g-col span="2">1</g-col>-->
+      <!--  <g-col span="20" offset="2">2</g-col>-->
+      <!--</g-row>-->
+      <!--<g-row gutter="20">-->
+      <!--  <g-col span="4">1</g-col>-->
+      <!--  <g-col span="10" :offset="2">2</g-col>-->
+      <!--  <g-col span="4" :offset="4">3</g-col>-->
+      <!--</g-row>-->
     </section>
 
   </div>

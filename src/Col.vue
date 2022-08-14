@@ -50,26 +50,23 @@ export default {
 
 <style scoped lang="scss">
 .g-col {
-  height: 50px;
-  background: grey;
-  border: 1px solid red;
   @for $i from 1 through 24 {
     &.col-#{$i} { width: $i / 24 * 100%; }
     &.offset-#{$i} { margin-left: $i / 24 * 100%; }
   }
-  @media (min-width: 577px) and (max-width: 768px) {
+  @media (min-width: 577px) {
     @for $i from 1 through 24 {
       &.col-pad-#{$i} { width: $i / 24 * 100%; }
       &.offset-pad-#{$i} { margin-left: $i / 24 * 100%; }
     }
   }
-  @media (min-width: 769px) and (max-width: 992px) {
+  @media (min-width: 769px) {
     @for $i from 1 through 24 {
       &.col-narrowPc-#{$i} { width: $i / 24 * 100%; }
       &.offset-narrowPc-#{$i} { margin-left: $i / 24 * 100%; }
     }
   }
-  @media (min-width: 993px) and (max-width: 1200px) {
+  @media (min-width: 993px) {
     @for $i from 1 through 24 {
       &.col-pc-#{$i} { width: $i / 24 * 100%; }
       &.offset-pc-#{$i} { margin-left: $i / 24 * 100%; }
