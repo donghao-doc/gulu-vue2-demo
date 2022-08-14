@@ -2,7 +2,9 @@
   <div
     :style="{paddingLeft: `${gutter}px`, paddingRight: `${gutter}px`}"
     :class="['g-col', span && `col-${span}`, offset && `offset-${offset}`]"
-  ></div>
+  >
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -18,7 +20,9 @@ export default {
     }
   },
   created() {
-    this.gutter = this.$parent.gutter / 2
+    if (this.$parent.gutter) {
+      this.gutter = this.$parent.gutter / 2
+    }
   }
 }
 </script>
@@ -29,7 +33,6 @@ export default {
   height: 50px;
   background: grey;
   border: 1px solid red;
-  padding: 0 10px;
   @for $i from 1 through 24 {
     &.col-#{$i} { width: $i / 24 * 100%; }
     &.offset-#{$i} { margin-left: $i / 24 * 100%; }
