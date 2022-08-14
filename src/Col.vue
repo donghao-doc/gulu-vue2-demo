@@ -2,8 +2,9 @@
   <div
     :style="{paddingLeft: `${gutter}px`, paddingRight: `${gutter}px`}"
     :class="[
-      'g-col', span && `col-${span}`, offset && `offset-${offset}`,
-      phone && `col-phone-${phone.span}`, pad && `col-pad-${pad.span}`,
+      'g-col',
+      span && `col-${span}`, offset && `offset-${offset}`,
+      pad && `col-pad-${pad.span}`,
       narrowPc && `col-narrowPc-${narrowPc.span}`, pc && `col-pc-${pc.span}`, widePc && `col-widePc-${widePc.span}`
     ]"
   >
@@ -29,7 +30,6 @@ export default {
   props: {
     span: {type: [String, Number]},
     offset: {type: [String, Number]},
-    phone: {type: Object, validator},
     pad: {type: Object, validator},
     narrowPc: {type: Object, validator},
     pc: {type: Object, validator},
@@ -56,12 +56,6 @@ export default {
   @for $i from 1 through 24 {
     &.col-#{$i} { width: $i / 24 * 100%; }
     &.offset-#{$i} { margin-left: $i / 24 * 100%; }
-  }
-  @media (max-width: 576px) {
-    @for $i from 1 through 24 {
-      &.col-phone-#{$i} { width: $i / 24 * 100%; }
-      &.offset-phone-#{$i} { margin-left: $i / 24 * 100%; }
-    }
   }
   @media (min-width: 577px) and (max-width: 768px) {
     @for $i from 1 through 24 {
