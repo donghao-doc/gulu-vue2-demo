@@ -29,7 +29,6 @@ export default {
 
 <style scoped lang="scss">
 .g-col {
-  flex-grow: 1;
   height: 50px;
   background: grey;
   border: 1px solid red;
