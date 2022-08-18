@@ -39,64 +39,22 @@ describe('Col', () => {
     vm.$destroy()
   })
 
-  it('可以设置pad.', () => {
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor = Vue.extend(Col)
-    const vm = new Constructor({
-      propsData: {
-        pad: {span: 12, offset: 2}
-      }
-    }).$mount(div)
-    expect(Array.from(vm.$el.classList)).to.include('col-pad-12')
-    expect(Array.from(vm.$el.classList)).to.include('offset-pad-2')
-    div.remove()
-    vm.$destroy()
-  })
-
-  it('可以设置narrowPc.', () => {
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor = Vue.extend(Col)
-    const vm = new Constructor({
-      propsData: {
-        narrowPc: {span: 8, offset: 2}
-      }
-    }).$mount(div)
-    expect(Array.from(vm.$el.classList)).to.include('col-narrowPc-8')
-    expect(Array.from(vm.$el.classList)).to.include('offset-narrowPc-2')
-    div.remove()
-    vm.$destroy()
-  })
-
-  it('可以设置pc.', () => {
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor = Vue.extend(Col)
-    const vm = new Constructor({
-      propsData: {
-        pc: {span: 6, offset: 2}
-      }
-    }).$mount(div)
-    expect(Array.from(vm.$el.classList)).to.include('col-pc-6')
-    expect(Array.from(vm.$el.classList)).to.include('offset-pc-2')
-    div.remove()
-    vm.$destroy()
-  })
-
-  it('可以设置widePc.', () => {
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor = Vue.extend(Col)
-    const vm = new Constructor({
-      propsData: {
-        widePc: {span: 4, offset: 2}
-      }
-    }).$mount(div)
-    expect(Array.from(vm.$el.classList)).to.include('col-widePc-4')
-    expect(Array.from(vm.$el.classList)).to.include('offset-widePc-2')
-    div.remove()
-    vm.$destroy()
+  it('可以设置 pad / narrowPc / pc / widePc.', () => {
+    const propArr = ['pad', 'narrowPc', 'pc', 'widePc']
+    propArr.forEach(item => {
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      const Constructor = Vue.extend(Col)
+      const vm = new Constructor({
+        propsData: {
+          [item]: {span: 12, offset: 2}
+        }
+      }).$mount(div)
+      expect(Array.from(vm.$el.classList)).to.include(`col-${item}-12`)
+      expect(Array.from(vm.$el.classList)).to.include(`offset-${item}-2`)
+      div.remove()
+      vm.$destroy()
+    })
   })
 
 })
