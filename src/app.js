@@ -4,8 +4,8 @@ import Icon from './Icon.vue'
 import Button from './Button.vue'
 import ButtonGroup from './ButtonGroup.vue'
 import Input from './Input.vue'
-import Row from './Row.vue'
-import Col from './Col.vue'
+import Row from './Grid/Row.vue'
+import Col from './Grid/Col.vue'
 
 Vue.component('g-icon', Icon)
 Vue.component('g-button', Button)
