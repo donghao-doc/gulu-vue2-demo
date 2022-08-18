@@ -49,7 +49,7 @@ export default {
     }
   },
   created() {
-    if (this.$parent.gutter) {
+    if (this.$parent && this.$parent.gutter) {
       this.gutter = this.$parent.gutter / 2
     }
   }
@@ -59,31 +59,31 @@ export default {
 <style scoped lang="scss">
 .g-col {
   @for $i from 1 through 24 {
-    &.col-#{$i} { width: $i / 24 * 100%; }
-    &.offset-#{$i} { margin-left: $i / 24 * 100%; }
+    &.col-#{$i} { width: calc($i / 24 * 100%); }
+    &.offset-#{$i} { margin-left: calc($i / 24 * 100%); }
   }
   @media (min-width: 577px) {
     @for $i from 1 through 24 {
-      &.col-pad-#{$i} { width: $i / 24 * 100%; }
-      &.offset-pad-#{$i} { margin-left: $i / 24 * 100%; }
+      &.col-pad-#{$i} { width: calc($i / 24 * 100%); }
+      &.offset-pad-#{$i} { margin-left: calc($i / 24 * 100%); }
     }
   }
   @media (min-width: 769px) {
     @for $i from 1 through 24 {
-      &.col-narrowPc-#{$i} { width: $i / 24 * 100%; }
-      &.offset-narrowPc-#{$i} { margin-left: $i / 24 * 100%; }
+      &.col-narrowPc-#{$i} { width: calc($i / 24 * 100%); }
+      &.offset-narrowPc-#{$i} { margin-left: calc($i / 24 * 100%); }
     }
   }
   @media (min-width: 993px) {
     @for $i from 1 through 24 {
-      &.col-pc-#{$i} { width: $i / 24 * 100%; }
-      &.offset-pc-#{$i} { margin-left: $i / 24 * 100%; }
+      &.col-pc-#{$i} { width: calc($i / 24 * 100%); }
+      &.offset-pc-#{$i} { margin-left: calc($i / 24 * 100%); }
     }
   }
   @media (min-width: 1201px) {
     @for $i from 1 through 24 {
-      &.col-widePc-#{$i} { width: $i / 24 * 100%; }
-      &.offset-widePc-#{$i} { margin-left: $i / 24 * 100%; }
+      &.col-widePc-#{$i} { width: calc($i / 24 * 100%); }
+      &.offset-widePc-#{$i} { margin-left: calc($i / 24 * 100%); }
     }
   }
 }
