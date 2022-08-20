@@ -11,6 +11,7 @@ import Header from './Layout/Header.vue'
 import Sider from './Layout/Sider.vue'
 import Content from './Layout/Content.vue'
 import Footer from './Layout/Footer.vue'
+import Toast from './Toast.vue'
 
 Vue.component('g-icon', Icon)
 Vue.component('g-button', Button)
@@ -23,6 +24,7 @@ Vue.component('g-header', Header)
 Vue.component('g-sider', Sider)
 Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
+Vue.component('g-toast', Toast)
 
 Vue.config.productionTip = false
 
