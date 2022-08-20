@@ -18,15 +18,15 @@
       --border-color-hover: #666;
       --border-radius: 4px;
     }
-    body { font-size: var(--font-size); padding: 20px; }
-    section { margin-bottom: 20px; }
+    body { font-size: var(--font-size); }
+    /*section { margin-bottom: 20px; }*/
   </style>
   <style>
     .demo {
-      height: 50px;
-      background: #ddd;
+      min-height: 100px;
       border: 1px solid #666;
     }
+    .sider { min-width: 200px; }
   </style>
 </head>
 <body>
@@ -66,39 +66,39 @@
     <!--</section>-->
 
     <!-- 栅格系统 -->
-    <section>
-      <g-row>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-      </g-row>
-      <br>
-      <g-row>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8, offset: 4}">
-          <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 4, offset: 4}">
-          <div class="demo"></div>
-        </g-col>
-      </g-row>
+    <!--<section>-->
+      <!--<g-row>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8}" :pc="{span: 6}" :wide-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--</g-row>-->
+      <!--<br>-->
+      <!--<g-row>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 8, offset: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--  <g-col span="24" :pad="{span: 12}" :narrow-pc="{span: 4, offset: 4}">-->
+      <!--    <div class="demo"></div>-->
+      <!--  </g-col>-->
+      <!--</g-row>-->
       <!--<g-row align="center">-->
       <!--  <g-col style="width: 100px">1</g-col>-->
       <!--  <g-col style="width: 100px">2</g-col>-->
@@ -129,6 +129,35 @@
       <!--  <g-col span="10" :offset="2">2</g-col>-->
       <!--  <g-col span="4" :offset="4">3</g-col>-->
       <!--</g-row>-->
+    <!--</section>-->
+
+    <!-- 布局组件 -->
+    <section>
+      <!--<g-layout style="height: 100vh">-->
+      <!--  <g-header class="demo">header</g-header>-->
+      <!--  <g-content class="demo">content</g-content>-->
+      <!--  <g-footer class="demo">footer</g-footer>-->
+      <!--</g-layout>-->
+      <!--<g-layout style="height: 100vh">-->
+      <!--  <g-header class="demo">header</g-header>-->
+      <!--  <g-layout>-->
+      <!--    <g-sider class="sider demo">sider</g-sider>-->
+      <!--    <g-content class="demo">content</g-content>-->
+      <!--  </g-layout>-->
+      <!--  <g-layout>-->
+      <!--    <g-content class="demo">content</g-content>-->
+      <!--    <g-sider class="sider demo">sider</g-sider>-->
+      <!--  </g-layout>-->
+      <!--  <g-footer class="demo">footer</g-footer>-->
+      <!--</g-layout>-->
+      <g-layout style="height: 100vh">
+        <g-sider class="sider demo">sider</g-sider>
+        <g-layout>
+          <g-header class="demo">header</g-header>
+          <g-content class="demo">content</g-content>
+          <g-footer class="demo">footer</g-footer>
+        </g-layout>
+      </g-layout>
     </section>
 
   </div>
