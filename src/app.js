@@ -26,6 +26,10 @@ Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
 Vue.component('g-toast', Toast)
 
+import toastPlugin from './plugins/toastPlugin.js'
+
+Vue.use(toastPlugin)
+
 Vue.config.productionTip = false
 
 new Vue({
@@ -36,18 +40,21 @@ new Vue({
     loading3: false,
     message: '你好世界'
   },
+  mounted() {
+    this.$toast('33333333333')
+  },
   methods: {
-    onInput(event) {
-      console.log(event.target.value)
-    },
-    onChange(event) {
-      console.log(event.target.value)
-    },
-    onFocus(event) {
-      console.log(event.target.value)
-    },
-    onBlur(event) {
-      console.log(event.target.value)
-    }
+    // onInput(event) {
+    //   console.log(event.target.value)
+    // },
+    // onChange(event) {
+    //   console.log(event.target.value)
+    // },
+    // onFocus(event) {
+    //   console.log(event.target.value)
+    // },
+    // onBlur(event) {
+    //   console.log(event.target.value)
+    // }
   }
 })
