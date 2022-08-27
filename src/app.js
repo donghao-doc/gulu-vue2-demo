@@ -41,17 +41,6 @@ new Vue({
     message: '你好世界'
   },
   mounted() {
-    this.$toast('时上了飞九分零四', {
-      position: 'bottom',
-      closeButton: {
-        text: '关闭',
-        callback(toast) {
-          console.log(toast)
-          toast.log()
-          console.log('4444444444444444')
-        }
-      }
-    })
   },
   methods: {
     // onInput(event) {
@@ -66,5 +55,18 @@ new Vue({
     // onBlur(event) {
     //   console.log(event.target.value)
     // }
+    showToast() {
+      this.$toast(`时上了飞九分零四-${parseInt(Math.random() * 100)}`, {
+        position: 'bottom',
+        closeButton: {
+          text: '关闭',
+          callback(toast) {
+            console.log(toast)
+            toast.log()
+            console.log('4444444444444444')
+          }
+        }
+      })
+    }
   }
 })
