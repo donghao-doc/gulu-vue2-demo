@@ -1,5 +1,5 @@
 <template>
-  <div class="g-toast">
+  <div :class="['g-toast', `position-${position}`]">
     <div v-if="enableHtml" v-html="$slots.default[0]" class="content"></div>
     <span v-else class="content"><slot></slot></span>
     <i class="line"></i>
@@ -23,6 +23,12 @@ export default {
       type: Object,
       default() {
         return { text: '关闭', callback: null }
+      }
+    },
+    position: {
+      type: String, default: 'top',
+      validator(value) {
+        return ['top', 'middle', 'bottom'].includes(value)
       }
     }
   },
@@ -64,7 +70,10 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   line-height: 1.6;
   padding: 8px 0;
   display: flex; align-items: center;
-  position: fixed; left: 50%; top: 0; transform: translateX(-50%);
+  position: fixed; left: 50%; transform: translateX(-50%); z-index: 2000;
+  &.position-top { top: 0; }
+  &.position-middle { top: 50%; transform: translate(-50%, -50%); }
+  &.position-bottom { bottom: 0; }
 }
 
 .content {

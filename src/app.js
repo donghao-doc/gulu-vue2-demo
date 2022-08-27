@@ -41,12 +41,15 @@ new Vue({
     message: '你好世界'
   },
   mounted() {
-    this.$toast('时上了飞机路上的风景历代书法家螺丝钉解放路上的风景类毒素解放螺丝钉解放螺丝钉了历史交锋历代书法家了多少就发了多少积分九分零四', {
-      text: '关闭',
-      callback(toast) {
-        console.log(toast)
-        toast.log()
-        console.log('4444444444444444')
+    this.$toast('时上了飞九分零四', {
+      position: 'bottom',
+      closeButton: {
+        text: '关闭',
+        callback(toast) {
+          console.log(toast)
+          toast.log()
+          console.log('4444444444444444')
+        }
       }
     })
   },
