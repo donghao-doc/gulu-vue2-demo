@@ -1,5 +1,7 @@
 <template>
-  <div :class="['g-toast', `position-${position}`]">
+  <div ref="toast"
+       :class="['g-toast', `position-${position}`, {[animationNames[0]]: show, [animationNames[1]]: !show}]"
+  >
     <div v-if="enableHtml" v-html="$slots.default[0]" class="content"></div>
     <span v-else class="content"><slot></slot></span>
     <i class="line"></i>
@@ -12,17 +14,18 @@ export default {
   name: 'GToast',
   data() {
     return {
-      timer: null
+      timer: null,
+      show: false
     }
   },
   props: {
-    enableHtml: { type: Boolean, default: false },
-    autoClose: { type: Boolean, default: false },
-    closeDelay: { type: [String, Number], default: 3 },
+    enableHtml: {type: Boolean, default: false},
+    autoClose: {type: Boolean, default: false},
+    closeDelay: {type: [String, Number], default: 3},
     closeButton: {
       type: Object,
       default() {
-        return { text: '关闭', callback: null }
+        return {text: '关闭', callback: null}
       }
     },
     position: {
@@ -32,7 +35,18 @@ export default {
       }
     }
   },
+  computed: {
+    animationNames() {
+      const names = {
+        middle: ['fadeIn', 'fadeOut'],
+        top: ['topSlideDown', 'topSlideUp'],
+        bottom: ['bottomSlideUp', 'bottomSlideDown']
+      }
+      return names[this.position]
+    }
+  },
   mounted() {
+    this.show = true
     if (this.autoClose) {
       const delay = Number(this.closeDelay) * 1000
       this.timer = setTimeout(() => {
@@ -45,7 +59,16 @@ export default {
   },
   methods: {
     close() {
+      this.show = false
+      this.$refs.toast.addEventListener('animationend', () => {
+        this.$el.remove()
+        this.$emit('close')
+        this.$destroy()
+      })
+    },
+    closeDirectly() {
       this.$el.remove()
+      this.$emit('close')
       this.$destroy()
     },
     log() {
@@ -53,7 +76,7 @@ export default {
     },
     handleCloseButton() {
       this.close()
-      const { callback } = this.closeButton
+      const {callback} = this.closeButton
       callback && typeof callback === 'function' && callback(this)
     }
   }
@@ -71,9 +94,48 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   padding: 8px 0;
   display: flex; align-items: center;
   position: fixed; left: 50%; transform: translateX(-50%); z-index: 2000;
-  &.position-top { top: 0; }
-  &.position-middle { top: 50%; transform: translate(-50%, -50%); }
-  &.position-bottom { bottom: 0; }
+  &.position-top {
+    top: 0;
+    border-top-left-radius: 0; border-top-right-radius: 0;
+  }
+  &.position-middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.position-bottom {
+    bottom: 0;
+    border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+  }
+  &.fadeIn { animation: fade-in 0.3s linear forwards; }
+  &.fadeOut { animation: fade-out 0.3s linear forwards; }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  &.topSlideDown { animation: top-slide-down 0.3s linear forwards; }
+  &.topSlideUp { animation: top-slide-up 0.3s linear forwards; }
+  @keyframes top-slide-down {
+    0% { transform: translate(-50%, -100%); }
+    100% { transform: translate(-50%, 0); }
+  }
+  @keyframes top-slide-up {
+    0% { transform: translate(-50%, 0); }
+    100% { transform: translate(-50%, -100%); }
+  }
+  &.bottomSlideDown { animation: bottom-slide-down 0.3s linear forwards; }
+  &.bottomSlideUp { animation: bottom-slide-up 0.3s linear forwards; }
+  @keyframes bottom-slide-down {
+    0% { transform: translate(-50%, 0); }
+    100% { transform: translate(-50%, 100%); }
+  }
+  @keyframes bottom-slide-up {
+    0% { transform: translate(-50%, 100%); }
+    100% { transform: translate(-50%, 0); }
+  }
 }
 
 .content {
