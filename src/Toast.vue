@@ -39,8 +39,8 @@ export default {
     animationNames() {
       const names = {
         middle: ['fadeIn', 'fadeOut'],
-        top: ['topSlideDown', 'topSlideUp'],
-        bottom: ['bottomSlideUp', 'bottomSlideDown']
+        top: ['top-slideDown', 'top-slideUp'],
+        bottom: ['bottom-slideUp', 'bottom-slideDown']
       }
       return names[this.position]
     }
@@ -117,8 +117,8 @@ $animation-duration: 0.2s;
     0% { opacity: 1; }
     100% { opacity: 0; }
   }
-  &.topSlideDown { animation: top-slide-down $animation-duration linear forwards; }
-  &.topSlideUp { animation: top-slide-up $animation-duration linear forwards; }
+  &.top-slideDown { animation: top-slide-down $animation-duration linear forwards; }
+  &.top-slideUp { animation: top-slide-up $animation-duration linear forwards; }
   @keyframes top-slide-down {
     0% { transform: translate(-50%, -100%); }
     100% { transform: translate(-50%, 0); }
@@ -127,8 +127,8 @@ $animation-duration: 0.2s;
     0% { transform: translate(-50%, 0); }
     100% { transform: translate(-50%, -100%); }
   }
-  &.bottomSlideDown { animation: bottom-slide-down $animation-duration linear forwards; }
-  &.bottomSlideUp { animation: bottom-slide-up $animation-duration linear forwards; }
+  &.bottom-slideDown { animation: bottom-slide-down $animation-duration linear forwards; }
+  &.bottom-slideUp { animation: bottom-slide-up $animation-duration linear forwards; }
   @keyframes bottom-slide-down {
     0% { transform: translate(-50%, 0); }
     100% { transform: translate(-50%, 100%); }

@@ -94,7 +94,7 @@ describe('Toast', () => {
         }
       }).$mount()
       expect(Array.from(vm.$el.classList)).to.include('position-top')
-      expect(vm.$el.classList.contains('topSlideUp')).to.equal(true)
+      expect(vm.$el.classList.contains('top-slideUp')).to.equal(true)
       vm.$el.remove()
       vm.$destroy()
     })
