@@ -53,11 +53,12 @@ new Vue({
     // onBlur(event) {
     //   console.log(event.target.value)
     // }
-    showToast() {
+
+    showToast(position) {
       this.$toast(`时上了飞九分零四-${parseInt(Math.random() * 100)}`, {
         autoClose: true,
         closeDelay: 2,
-        position: 'bottom',
+        position,
         closeButton: {
           text: '关闭',
           callback(toast) {
@@ -65,6 +66,6 @@ new Vue({
           }
         }
       })
-    }
+    },
   }
 })

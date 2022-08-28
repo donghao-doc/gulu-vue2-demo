@@ -86,6 +86,7 @@ export default {
 <style scoped lang="scss">
 $font-size: 14px;
 $toast-bg: rgba(0, 0, 0, 0.75);
+$animation-duration: 0.2s;
 
 .g-toast {
   color: #fff; font-size: $font-size;
@@ -106,8 +107,8 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     bottom: 0;
     border-bottom-left-radius: 0; border-bottom-right-radius: 0;
   }
-  &.fadeIn { animation: fade-in 0.3s linear forwards; }
-  &.fadeOut { animation: fade-out 0.3s linear forwards; }
+  &.fadeIn { animation: fade-in $animation-duration linear forwards; }
+  &.fadeOut { animation: fade-out $animation-duration linear forwards; }
   @keyframes fade-in {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -116,8 +117,8 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     0% { opacity: 1; }
     100% { opacity: 0; }
   }
-  &.topSlideDown { animation: top-slide-down 0.3s linear forwards; }
-  &.topSlideUp { animation: top-slide-up 0.3s linear forwards; }
+  &.topSlideDown { animation: top-slide-down $animation-duration linear forwards; }
+  &.topSlideUp { animation: top-slide-up $animation-duration linear forwards; }
   @keyframes top-slide-down {
     0% { transform: translate(-50%, -100%); }
     100% { transform: translate(-50%, 0); }
@@ -126,8 +127,8 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     0% { transform: translate(-50%, 0); }
     100% { transform: translate(-50%, -100%); }
   }
-  &.bottomSlideDown { animation: bottom-slide-down 0.3s linear forwards; }
-  &.bottomSlideUp { animation: bottom-slide-up 0.3s linear forwards; }
+  &.bottomSlideDown { animation: bottom-slide-down $animation-duration linear forwards; }
+  &.bottomSlideUp { animation: bottom-slide-up $animation-duration linear forwards; }
   @keyframes bottom-slide-down {
     0% { transform: translate(-50%, 0); }
     100% { transform: translate(-50%, 100%); }
