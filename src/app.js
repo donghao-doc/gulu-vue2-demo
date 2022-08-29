@@ -11,6 +11,11 @@ import Header from './Layout/Header.vue'
 import Sider from './Layout/Sider.vue'
 import Content from './Layout/Content.vue'
 import Footer from './Layout/Footer.vue'
+import Tabs from './Tab/Tabs.vue'
+import TabsHead from './Tab/TabsHead.vue'
+import TabsItem from './Tab/TabsItem.vue'
+import TabsBody from './Tab/TabsBody.vue'
+import TabsPane from './Tab/TabsPane.vue'
 
 Vue.component('g-icon', Icon)
 Vue.component('g-button', Button)
@@ -23,6 +28,11 @@ Vue.component('g-header', Header)
 Vue.component('g-sider', Sider)
 Vue.component('g-content', Content)
 Vue.component('g-footer', Footer)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-pane', TabsPane)
 
 import toastPlugin from './plugins/toastPlugin.js'
 
@@ -36,7 +46,8 @@ new Vue({
     loading1: false,
     loading2: true,
     loading3: false,
-    message: '你好世界'
+    message: '你好世界',
+    selectedTab: 'first'
   },
   mounted() {
   },
@@ -54,18 +65,18 @@ new Vue({
     //   console.log(event.target.value)
     // }
 
-    showToast(position) {
-      this.$toast(`时上了飞九分零四-${parseInt(Math.random() * 100)}`, {
-        autoClose: true,
-        closeDelay: 2,
-        position,
-        closeButton: {
-          text: '关闭',
-          callback(toast) {
-            toast.log()
-          }
-        }
-      })
-    },
+    // showToast(position) {
+    //   this.$toast(`时上了飞九分零四-${parseInt(Math.random() * 100)}`, {
+    //     autoClose: true,
+    //     closeDelay: 2,
+    //     position,
+    //     closeButton: {
+    //       text: '关闭',
+    //       callback(toast) {
+    //         toast.log()
+    //       }
+    //     }
+    //   })
+    // },
   }
 })
