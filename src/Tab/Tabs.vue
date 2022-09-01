@@ -5,8 +5,15 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
   name: 'GTabs',
+  data() {
+    return {
+      eventBus: new Vue()
+    }
+  },
   props: {
     selected: { type: String, required: true },
     direction: {
@@ -15,6 +22,14 @@ export default {
         return ['horizontal', 'vertical'].includes(value)
       }
     }
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus
+    }
+  },
+  mounted() {
+    this.eventBus.$emit('update:selected', this.selected)
   }
 }
 </script>
