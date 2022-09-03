@@ -1,5 +1,5 @@
 <template>
-  <div :class="['g-tabsItem', {active, disabled}]" @click="switchTab">
+  <div :class="['g-tabsItem', {active, disabled}]" :data-name="name" @click="switchTab">
     <slot></slot>
   </div>
 </template>
