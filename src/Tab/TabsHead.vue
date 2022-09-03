@@ -35,28 +35,20 @@ export default {
 
 <style scoped lang="scss">
 .g-tabsHead {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: flex; justify-content: flex-start; align-items: center;
   position: relative;
   > .tabsItem-wrapper {
     display: flex;
     &::after {
       content: "";
-      width: 100%;
-      height: 2px;
+      width: 100%; height: 2px;
       background: #e4e7ed;
-      position: absolute;
-      left: 0;
-      bottom: 0;
+      position: absolute; left: 0; bottom: 0;
     }
     > .line {
       height: 2px;
       background: #409eff;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      z-index: 1;
+      position: absolute; left: 0; bottom: 0; z-index: 1;
       transition: all 0.2s linear;
     }
   }
