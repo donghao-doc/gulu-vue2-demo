@@ -18,14 +18,15 @@ export default {
     name: { type: [String, Number], required: true }
   },
   mounted() {
-    this.eventBus.$on('update:selected', (name) => {
+    this.eventBus && this.eventBus.$on('update:selected', (name) => {
       this.active = name === this.name
     })
   },
   methods: {
     switchTab() {
       if (this.disabled) return
-      this.eventBus.$emit('update:selected', this.name)
+      this.eventBus && this.eventBus.$emit('update:selected', this.name)
+      this.$emit('click', this)   // 用于单元测试时点击触发 click 事件
     }
   }
 }

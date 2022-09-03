@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    this.eventBus.$emit('update:selected', this.selected)
+    this.eventBus && this.eventBus.$emit('update:selected', this.selected)
   }
 }
 </script>

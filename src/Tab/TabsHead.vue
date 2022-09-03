@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted() {
-    this.eventBus.$on('update:selected', (name) => {
+    this.eventBus && this.eventBus.$on('update:selected', (name) => {
       if (this.$options.name !== 'GTabsHead') return
       const activeItem = this.$children.filter(item => item.name === name)[0]
       this.line.width = `${activeItem.$el.getBoundingClientRect().width}px`
