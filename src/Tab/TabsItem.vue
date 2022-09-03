@@ -1,5 +1,5 @@
 <template>
-  <div :class="['g-tabsItem', {active}]" @click="switchTab">
+  <div :class="['g-tabsItem', {active, disabled}]" @click="switchTab">
     <slot></slot>
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     switchTab() {
+      if (this.disabled) return
       this.eventBus.$emit('update:selected', this.name)
     }
   }
@@ -33,13 +34,14 @@ export default {
 <style scoped lang="scss">
 $tab-height: 40px;
 $tab-active-color: #409eff;
+$tab-disabled-color: grey;
 .g-tabsItem {
   height: $tab-height;
-//   flex-shrink: 0;
   padding: 0 20px;
   display: flex; align-items: center;
   cursor: pointer;
   &:hover { color: $tab-active-color; }
   &.active { color: $tab-active-color; }
+  &.disabled { color: $tab-disabled-color; cursor: not-allowed; }
 }
 </style>

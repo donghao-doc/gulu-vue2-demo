@@ -24,10 +24,8 @@ export default {
   },
   mounted() {
     this.eventBus.$on('update:selected', (name) => {
-      console.log(this)
       if (this.$options.name !== 'GTabsHead') return
       const activeItem = this.$children.filter(item => item.name === name)[0]
-      // this.line.width = getComputedStyle(activeItem.$el).width
       this.line.width = `${activeItem.$el.getBoundingClientRect().width}px`
       this.line.translateX = `${activeItem.$el.offsetLeft}px`
     })
