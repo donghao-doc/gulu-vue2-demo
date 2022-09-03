@@ -32,17 +32,14 @@ export default {
 
 <style scoped lang="scss">
 $tab-height: 40px;
+$tab-active-color: #409eff;
 .g-tabsItem {
   height: $tab-height;
-  flex-shrink: 0;
-  border-left: 1px solid transparent; border-right: 1px solid transparent;
+//   flex-shrink: 0;
   padding: 0 20px;
   display: flex; align-items: center;
   cursor: pointer;
-  &:hover { color: #409eff; }
-  &.active {
-    color: #409eff;
-    background: #fff; border-right-color: #dcdfe6; border-left-color: #dcdfe6;
-  }
+  &:hover { color: $tab-active-color; }
+  &.active { color: $tab-active-color; }
 }
 </style>

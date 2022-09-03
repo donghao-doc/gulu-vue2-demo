@@ -11,5 +11,6 @@ export default {
 </script>
 
 <style scoped>
-.g-tabsBody {}
+.g-tabsBody {
+}
 </style>
