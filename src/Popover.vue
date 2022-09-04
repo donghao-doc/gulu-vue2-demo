@@ -1,6 +1,6 @@
 <template>
-  <div class="g-popover" @click="toggleContent">
-    <div v-if="visible" class="content-wrapper">
+  <div class="g-popover" @click.stop="handleTrigger">
+    <div v-if="visible" class="content-wrapper" @click.stop>
       <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -16,8 +16,15 @@ export default {
     }
   },
   methods: {
-    toggleContent() {
+    handleTrigger() {
       this.visible = !this.visible
+      if (this.visible) {
+        const eventHandler = () => {
+          this.visible = false
+          document.removeEventListener('click', eventHandler)
+        }
+        document.addEventListener('click', eventHandler)
+      }
     }
   }
 }
