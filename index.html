@@ -169,27 +169,35 @@
     <!--</section>-->
 
     <!-- Tab -->
-    <section style="padding: 10px;">
+    <!--<section style="padding: 10px;">-->
       <!--<g-tabs :selected="selectedTab" @update:selected="selectedTab = $event">-->
-      <g-tabs :selected.sync="selectedTab">
-        <g-tabs-head>
-          <g-tabs-item name="first">tab1</g-tabs-item>
-          <g-tabs-item name="second">tab22</g-tabs-item>
-          <g-tabs-item name="third">tab333</g-tabs-item>
-          <g-tabs-item name="fourth">tab4444</g-tabs-item>
-          <g-tabs-item name="fifth" disabled>tab55555</g-tabs-item>
-          <template v-slot:actions>
-            <g-button>设置</g-button>
-          </template>
-        </g-tabs-head>
-        <g-tabs-body>
-          <g-tabs-pane name="first">pane1</g-tabs-pane>
-          <g-tabs-pane name="second">pane2</g-tabs-pane>
-          <g-tabs-pane name="third">pane3</g-tabs-pane>
-          <g-tabs-pane name="fourth">pane4</g-tabs-pane>
-          <g-tabs-pane name="fifth">pane5</g-tabs-pane>
-        </g-tabs-body>
-      </g-tabs>
+      <!--<g-tabs :selected.sync="selectedTab">-->
+      <!--  <g-tabs-head>-->
+      <!--    <g-tabs-item name="first">tab1</g-tabs-item>-->
+      <!--    <g-tabs-item name="second">tab22</g-tabs-item>-->
+      <!--    <g-tabs-item name="third">tab333</g-tabs-item>-->
+      <!--    <g-tabs-item name="fourth">tab4444</g-tabs-item>-->
+      <!--    <g-tabs-item name="fifth" disabled>tab55555</g-tabs-item>-->
+      <!--    <template v-slot:actions>-->
+      <!--      <g-button>设置</g-button>-->
+      <!--    </template>-->
+      <!--  </g-tabs-head>-->
+      <!--  <g-tabs-body>-->
+      <!--    <g-tabs-pane name="first">pane1</g-tabs-pane>-->
+      <!--    <g-tabs-pane name="second">pane2</g-tabs-pane>-->
+      <!--    <g-tabs-pane name="third">pane3</g-tabs-pane>-->
+      <!--    <g-tabs-pane name="fourth">pane4</g-tabs-pane>-->
+      <!--    <g-tabs-pane name="fifth">pane5</g-tabs-pane>-->
+      <!--  </g-tabs-body>-->
+      <!--</g-tabs>-->
+    <!--</section>-->
+
+    <!-- Popover -->
+    <section style="padding: 100px 0 0 100px">
+      <g-popover>
+        <div slot="content">内容内容内容</div>
+        <g-button>click me</g-button>
+      </g-popover>
     </section>
 
   </div>
