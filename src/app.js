@@ -80,5 +80,9 @@ new Vue({
     //     }
     //   })
     // },
+
+    xyz() {
+      console.log('xxxxxxxx')
+    }
   }
 })

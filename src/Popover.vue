@@ -1,6 +1,6 @@
 <template>
-  <div class="g-popover" @click.stop="handleTrigger">
-    <div v-if="visible" ref="contentWrapper" class="g-popover-content-wrapper" @click.stop>
+  <div ref="popover" class="g-popover" @click="handleTrigger">
+    <div v-if="visible" ref="contentWrapper" class="g-popover-content-wrapper">
       <slot name="content"></slot>
     </div>
     <div ref="triggerWrapper" class="trigger-wrapper">
@@ -18,23 +18,40 @@ export default {
     }
   },
   methods: {
-    handleTrigger() {
-      this.visible = !this.visible
+    handleTrigger(event) {
+      if (!this.$refs.triggerWrapper.contains(event.target)) return
       if (this.visible) {
-        const eventHandler = () => {
-          this.visible = false
-          document.removeEventListener('click', eventHandler)
-        }
-        document.addEventListener('click', eventHandler)
-        this.$nextTick(() => {
-          const { contentWrapper, triggerWrapper } = this.$refs
-          const { left, top } = triggerWrapper.getBoundingClientRect()
-          contentWrapper.style.left = left + window.scrollX + 'px'
-          contentWrapper.style.top = top + window.scrollY + 'px'
-          document.body.appendChild(this.$refs.contentWrapper)
-        })
+        this.close()
+      } else {
+        this.open()
       }
-    }
+    },
+    open() {
+      this.visible = true
+      this.$nextTick(() => {
+        this.setContentPosition()
+        document.addEventListener('click', this.handleDocument)
+      })
+    },
+    close() {
+      this.visible = false
+      document.removeEventListener('click', this.handleDocument)
+    },
+    setContentPosition() {
+      const {contentWrapper, triggerWrapper} = this.$refs
+      const {left, top} = triggerWrapper.getBoundingClientRect()
+      contentWrapper.style.left = left + window.scrollX + 'px'
+      contentWrapper.style.top = top + window.scrollY + 'px'
+      document.body.appendChild(contentWrapper)
+    },
+    handleDocument(e) {
+      const { popover, contentWrapper } = this.$refs
+      if (popover && (e.target === popover || popover.contains(e.target))) return
+      if (contentWrapper && contentWrapper.contains(e.target)) return
+      this.close()
+    },
+
+
   }
 }
 </script>

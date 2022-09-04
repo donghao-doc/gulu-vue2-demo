@@ -193,8 +193,15 @@
     <!--</section>-->
 
     <!-- Popover -->
-    <div style="border: 5px solid blue; height: 1000px;"></div>
-    <section style="overflow: hidden; border: 1px solid red; margin: 100px 0 0 100px">
+    <!--<div style="border: 5px solid blue; height: 1000px;"></div>-->
+    <section
+      style="overflow: hidden; border: 1px solid red; margin: 100px"
+      @click="xyz"
+    >
+      <g-popover>
+        <div slot="content">内容123内容123内容123</div>
+        <g-button>click me</g-button>
+      </g-popover>
       <g-popover>
         <div slot="content">内容123内容123内容123</div>
         <g-button>click me</g-button>
