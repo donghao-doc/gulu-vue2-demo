@@ -47,23 +47,46 @@ export default {
     handleDocument(e) {
       const { popover, contentWrapper } = this.$refs
       if (popover && (e.target === popover || popover.contains(e.target))) return
-      if (contentWrapper && contentWrapper.contains(e.target)) return
+      if (contentWrapper && (e.target === contentWrapper || contentWrapper.contains(e.target))) return
       this.close()
     },
-
-
   }
 }
 </script>
 
 <style scoped lang="scss">
+$border-color: #333;
+$border-radius: 4px;
 .g-popover-content-wrapper {
-  border: 1px solid green;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  max-width: 20em;
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  word-break: break-all;
+  padding: 10px;
+  margin-top: -10px;
   position: absolute;
   left: 0;
   top: 0;
   transform: translateY(-100%);
+  &::before, &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    position: absolute;
+    left: 10px;
+  }
+  &::before {
+    border-top-color: #000;
+    top: 100%;
+  }
+  &::after {
+    border-top-color: #fff;
+    top: calc(100% - 1px);
+  }
 }
 
 .g-popover {
@@ -71,7 +94,7 @@ export default {
   vertical-align: middle;
   position: relative;
   > .trigger-wrapper {
-    border: 1px solid red;
+    display: inline-block;
   }
 }
 </style>
