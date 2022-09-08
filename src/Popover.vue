@@ -46,20 +46,18 @@ export default {
       document.removeEventListener('click', this.handleDocument)
     },
     setContentPosition() {
-      document.body.appendChild(this.$refs.contentWrapper)
       const {contentWrapper, triggerWrapper} = this.$refs
+      document.body.appendChild(contentWrapper)
       const {width, height, left, top} = triggerWrapper.getBoundingClientRect()
       const {width: width2, height: height2} = contentWrapper.getBoundingClientRect()
-      if (this.position === 'top' || this.position === 'bottom') {
-        contentWrapper.style.left = left + window.scrollX + 'px'
-        const tempHeight = this.position === 'top' ? (-height2) : height
-        contentWrapper.style.top = top + window.scrollY + tempHeight + 'px'
+      const positionMap = {
+        top: {left: left + window.scrollX, top: top + window.scrollY - height2},
+        bottom: {left: left + window.scrollX, top: top + window.scrollY + height},
+        left: {left: left + window.scrollX - width2, top: top + window.scrollY - (height2 - height) / 2},
+        right: {left: left + window.scrollX + width, top: top + window.scrollY - (height2 - height) / 2}
       }
-      if (this.position === 'left' || this.position === 'right') {
-        const tempWidth = this.position === 'left' ? (-width2) : width
-        contentWrapper.style.left = left + window.scrollX + tempWidth + 'px'
-        contentWrapper.style.top = top + window.scrollY - (height2 - height) / 2 + 'px'
-      }
+      contentWrapper.style.left = positionMap[this.position].left + 'px'
+      contentWrapper.style.top = positionMap[this.position].top + 'px'
     },
     handleDocument(e) {
       const {popover, contentWrapper} = this.$refs
