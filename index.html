@@ -194,10 +194,7 @@
 
     <!-- Popover -->
     <!--<div style="border: 5px solid blue; height: 1000px;"></div>-->
-    <section
-      style="overflow: hidden; margin: 100px"
-      @click="xyz"
-    >
+    <section style="overflow: hidden; margin: 100px" @click="xyz">
       <g-popover>
         <!--<div slot="content">内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123</div>-->
         <div slot="content">lsdjfskdflsdfldssdfsdfdsfdssdfsffljsfsdlfjdslfjlsdfjsldjfsdfjds</div>
@@ -216,6 +213,29 @@
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="right">
+        <div slot="content">内容123内容123内容123</div>
+        <g-button>click me</g-button>
+      </g-popover>
+    </section>
+    <section style="overflow: hidden; margin: 100px" @click="xyz">
+      <g-popover trigger="hover">
+        <!--<div slot="content">内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123</div>-->
+        <div slot="content">lsdjfskdflsdfldssdfsdfdsfdssdfsffljsfsdlfjdslfjlsdfjsldjfsdfjds</div>
+        <g-button>click me</g-button>
+      </g-popover>
+      <g-popover position="top" trigger="hover">
+        <div slot="content">内容123内容123内容123</div>
+        <g-button>click me</g-button>
+      </g-popover>
+      <g-popover position="bottom" trigger="hover">
+        <div slot="content">内容123内容123内容123</div>
+        <g-button>click me</g-button>
+      </g-popover>
+      <g-popover position="left" trigger="hover">
+        <div slot="content">内容123内容123内容123</div>
+        <g-button>click me</g-button>
+      </g-popover>
+      <g-popover position="right" trigger="hover">
         <div slot="content">内容123内容123内容123</div>
         <g-button>click me</g-button>
       </g-popover>
