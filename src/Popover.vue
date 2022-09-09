@@ -119,34 +119,34 @@ $border-radius: 4px;
   &.position-top {
     transform: translateY(-10px);
     &::before {
-      border-top-color: #000;
+      border-top-color: #000; border-bottom: none;
       left: 10px; top: 100%;
     }
     &::after {
-      border-top-color: #fff;
+      border-top-color: #fff; border-bottom: none;
       left: 10px; top: calc(100% - 1px);
     }
   }
   &.position-bottom {
     transform: translateY(10px);
     &::before {
-      border-bottom-color: #000;
+      border-bottom-color: #000; border-top: none;
       left: 10px; bottom: 100%;
     }
     &::after {
-      border-bottom-color: #fff;
+      border-bottom-color: #fff; border-top: none;
       left: 10px; bottom: calc(100% - 1px);
     }
   }
   &.position-left {
     transform: translateX(-10px);
     &::before {
-      border-left-color: #000;
+      border-left-color: #000; border-right: none;
       top: 50%; left: 100%;
       transform: translateY(-50%);
     }
     &::after {
-      border-left-color: #fff;
+      border-left-color: #fff; border-right: none;
       top: 50%; left: calc(100% - 1px);
       transform: translateY(-50%);
     }
@@ -154,12 +154,12 @@ $border-radius: 4px;
   &.position-right {
     transform: translateX(10px);
     &::before {
-      border-right-color: #000;
+      border-right-color: #000; border-left: none;
       top: 50%; right: 100%;
       transform: translateY(-50%);
     }
     &::after {
-      border-right-color: #fff;
+      border-right-color: #fff; border-left: none;
       top: 50%; right: calc(100% - 1px);
       transform: translateY(-50%);
     }
