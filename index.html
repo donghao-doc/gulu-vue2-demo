@@ -197,11 +197,16 @@
     <section style="overflow: hidden; margin: 100px" @click="xyz">
       <g-popover>
         <!--<div slot="content">内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123内容123</div>-->
-        <div slot="content">lsdjfskdflsdfldssdfsdfdsfdssdfsffljsfsdlfjdslfjlsdfjsldjfsdfjds</div>
+        <!--<template slot="content" slot-scope="{ close }">-->
+        <!--<template v-slot:content="{ close }">-->
+        <template #content="{ close }">
+          <div>lsdjfskdflsdfldssdfsdfdsfdssdfsffljsfsdlfjdslfjlsdfjsldjfsdfjds</div>
+          <g-button @click="close">关闭</g-button>
+        </template>
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="top">
-        <div slot="content">内容123内容123内容123</div>
+        <div slot="content">内容123内容 <a href="//qq.com">看新闻</a> 123内容123</div>
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="bottom">
@@ -209,7 +214,7 @@
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="left">
-        <div slot="content">内容123内容123内容123</div>
+        <div slot="content">内容123内容 <g-button>哈哈哈</g-button> 123内容123</div>
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="right">
@@ -224,7 +229,7 @@
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="top" trigger="hover">
-        <div slot="content">内容123内容123内容123</div>
+        <div slot="content">内容123内容 <a href="//qq.com">看新闻</a> 123内容123</div>
         <g-button>click me</g-button>
       </g-popover>
       <g-popover position="bottom" trigger="hover">
