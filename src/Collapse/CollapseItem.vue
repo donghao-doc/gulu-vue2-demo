@@ -1,7 +1,7 @@
 <template>
   <div class="g-collapseItem">
-    <div class="title">{{ title }}</div>
-    <div class="content"><slot></slot></div>
+    <div class="title" @click="open = !open">{{ title }}</div>
+    <div v-show="open" class="content"><slot></slot></div>
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   name: 'GCollapseItem',
   props: {
     title: { type: String, required: true }
+  },
+  data() {
+    return {
+      open: false
+    }
   }
 }
 </script>
