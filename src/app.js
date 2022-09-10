@@ -53,7 +53,8 @@ new Vue({
     loading2: true,
     loading3: false,
     message: '你好世界',
-    selectedTab: 'first'
+    selectedTab: 'first',
+    selected: ['item2', 'item3']
   },
   mounted() {
   },

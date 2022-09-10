@@ -1,19 +1,36 @@
 <template>
   <div class="g-collapseItem">
-    <div class="title" @click="open = !open">{{ title }}</div>
-    <div v-show="open" class="content"><slot></slot></div>
+    <div :data-name="name" class="title" @click="toggle">{{ title }}</div>
+    <div v-show="open" ref="content" class="content"><slot></slot></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'GCollapseItem',
+  inject: ['eventBus'],
   props: {
-    title: { type: String, required: true }
+    title: { type: String, required: true },
+    name: { type: String, required: true }
   },
   data() {
     return {
       open: false
+    }
+  },
+  mounted() {
+    this.eventBus && this.eventBus.$on('update:selected', names => {
+      this.open = names.includes(this.name)
+    })
+  },
+  methods: {
+    toggle() {
+      if (!this.eventBus) return
+      if (this.open) {
+        this.eventBus.$emit('update:removeSelected', this.name)
+      } else {
+        this.eventBus.$emit('update:addSelected', this.name)
+      }
     }
   }
 }
