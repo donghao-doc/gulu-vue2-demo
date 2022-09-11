@@ -20,7 +20,9 @@ export default {
   },
   mounted() {
     this.eventBus && this.eventBus.$on('update:selected', names => {
-      this.open = names.includes(this.name)
+      if (names && names.length) {
+        this.open = names.includes(this.name)
+      }
     })
   },
   methods: {

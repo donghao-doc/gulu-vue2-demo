@@ -11,7 +11,7 @@ export default {
   name: 'GCollapse',
   props: {
     single: { type: Boolean, default: false },
-    selected: { type: Array }
+    selected: { type: Array, default: () => [] }
   },
   data() {
     return {
