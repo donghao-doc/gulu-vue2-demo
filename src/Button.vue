@@ -29,18 +29,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$font-size: 14px;
+$button-height: 32px;
+$button-bg: #fff;
+$button-bg-active: #eee;
+$border-radius: 4px;
+$border-color: #999;
+$border-color-hover: #666;
+
 .g-button {
-  height: var(--button-height);
-  background: var(--button-bg);
-  font-size: var(--font-size);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
+  height: $button-height;
+  background: $button-bg;
+  font-size: $font-size;
+  border: 1px solid $border-color; border-radius: $border-radius;
   padding: 0 1em;
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex; align-items: center;
   vertical-align: middle;
-  &:hover { border-color: var(--border-color-hover); }
-  &:active { background: var(--button-bg-active); }
+  &:hover { border-color: $border-color-hover; }
+  &:active { background: $button-bg-active; }
   &:focus { outline: none; }
   &, &.icon-left {
     > .icon { order: 1; margin-right: .2em; }
