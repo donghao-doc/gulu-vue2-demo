@@ -6,7 +6,9 @@
   "scripts": {
     "start": "parcel index.html --no-cache",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
-    "dev-test": "parcel watch test/* --no-cache & karma start"
+    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -36,10 +38,13 @@
     "karma-mocha": "^2.0.1",
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^10.0.0",
+    "node-sass": "^7.0.3",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.54.0",
+    "sass-loader": "^7.0.1",
     "sinon": "^14.0.0",
     "sinon-chai": "^3.7.0",
-    "vue-template-compiler": "^2.7.8"
+    "vue-template-compiler": "^2.7.8",
+    "vuepress": "^1.9.7"
   }
 }
