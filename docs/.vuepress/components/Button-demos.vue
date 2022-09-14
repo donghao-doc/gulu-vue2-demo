@@ -12,9 +12,7 @@
       <g-button icon="right" icon-position="right">下一页</g-button>
     </g-button-group>
 
-    <pre>
-      <code>{{ code }}</code>
-    </pre>
+    <pre><code>{{ code }}</code></pre>
 
   </div>
 </template>
@@ -43,14 +41,12 @@ export default {
           <g-button>更多</g-button>
           <g-button icon="right" icon-position="right">下一页</g-button>
         </g-button-group>
-      `
+      `.replace(/ /g, '').trim()
     }
   }
 }
 </script>
 
 <style scoped>
-pre {
-  padding: 10px;
-}
+
 </style>

@@ -10,6 +10,7 @@
 
 <script>
 import Icon from './Icon.vue'
+
 export default {
   name: 'GButton',
   components: { 'g-icon': Icon },
