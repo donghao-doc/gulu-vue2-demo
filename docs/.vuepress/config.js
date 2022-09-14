@@ -23,6 +23,41 @@ module.exports = {
             title: '按钮',
             path: '/components/Button.md',
             sidebarDepth: 2,
+          },
+          {
+            title: '输入框',
+            path: '/components/Input.md',
+            sidebarDepth: 2,
+          },
+          {
+            title: '网格',
+            path: '/components/Grid.md',
+            sidebarDepth: 2,
+          },
+          {
+            title: '布局',
+            path: '/components/Layout.md',
+            sidebarDepth: 2,
+          },
+          {
+            title: 'Toast',
+            path: '/components/Toast.md',
+            sidebarDepth: 2,
+          },
+          {
+            title: '标签页',
+            path: '/components/Tabs.md',
+            sidebarDepth: 2,
+          },
+          {
+            title: '弹出层',
+            path: '/components/Popover.md',
+            sidebarDepth: 2,
+          },
+          {
+            title: '手风琴',
+            path: '/components/Collapse.md',
+            sidebarDepth: 2,
           }
         ]
       }
