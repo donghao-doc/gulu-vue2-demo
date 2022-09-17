@@ -1,18 +1,35 @@
 <template>
   <div>
 
-    <g-button>默认按钮</g-button>
-    <g-button :loading="loading1" @click="loading1 = !loading1">按钮1</g-button>
-    <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮2</g-button>
-    <g-button icon="settings" icon-position="left" :loading="loading3" @click="loading3 = !loading3">按钮3</g-button>
-    <g-button icon="settings" icon-position="right" :loading="loading4" @click="loading4 = !loading4">按钮4</g-button>
-    <g-button-group>
-      <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
+    <section>
+      <p>基本用法</p>
+      <g-button>默认按钮</g-button>
+      <pre><code>{{ code1 }}</code></pre>
+    </section>
 
-    <pre><code>{{ code }}</code></pre>
+    <section>
+      <p>点击显示 loading</p>
+      <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+      <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+      <pre><code>{{ code2 }}</code></pre>
+    </section>
+
+    <section>
+      <p>设置 icon 位置</p>
+      <g-button icon="settings" icon-position="left">按钮</g-button>
+      <g-button icon="settings" icon-position="right">按钮</g-button>
+      <pre><code>{{ code3 }}</code></pre>
+    </section>
+
+    <section>
+      <p>按钮组</p>
+      <g-button-group>
+        <g-button icon="left">上一页</g-button>
+        <g-button>更多</g-button>
+        <g-button icon="right" icon-position="right">下一页</g-button>
+      </g-button-group>
+      <pre><code>{{ code4 }}</code></pre>
+    </section>
 
   </div>
 </template>
@@ -28,20 +45,22 @@ export default {
     return {
       loading1: false,
       loading2: true,
-      loading3: false,
-      loading4: false,
-      code: `
-        <g-button>默认按钮</g-button>
-        <g-button :loading="loading1" @click="loading1 = !loading1">按钮1</g-button>
-        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮2</g-button>
-        <g-button icon="settings" icon-position="left" :loading="loading3" @click="loading3 = !loading3">按钮3</g-button>
-        <g-button icon="settings" icon-position="right" :loading="loading4" @click="loading4 = !loading4">按钮4</g-button>
+      code1: '<g-button>默认按钮</g-button>',
+      code2: `
+        <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+      `.replace(/ /g, '').trim(),
+      code3: `
+        <g-button icon="settings" icon-position="left">按钮</g-button>
+        <g-button icon="settings" icon-position="right">按钮</g-button>
+      `.replace(/ /g, '').trim(),
+      code4: `
         <g-button-group>
           <g-button icon="left">上一页</g-button>
           <g-button>更多</g-button>
           <g-button icon="right" icon-position="right">下一页</g-button>
         </g-button-group>
-      `.replace(/ /g, '').trim()
+      `.replace(/^ {8}/gm, '').trim(),
     }
   }
 }
