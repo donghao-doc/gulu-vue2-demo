@@ -41,11 +41,8 @@ Vue.component('g-collapse', Collapse)
 Vue.component('g-collapse-item', CollapseItem)
 
 import toastPlugin from './plugins/toastPlugin.js'
-
 Vue.use(toastPlugin)
 
 Vue.config.productionTip = false
 
-new Vue({
-  el: '#app',
-})
+new Vue({ el: '#app' })
