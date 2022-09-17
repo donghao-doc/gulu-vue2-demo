@@ -13,8 +13,11 @@
 </template>
 
 <script>
+import Icon from './Icon.vue'
+
 export default {
   name: 'GInput',
+  components: { 'g-icon': Icon },
   props: {
     value: { type: String },
     disabled: { type: Boolean, default: false },

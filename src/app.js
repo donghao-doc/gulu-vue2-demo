@@ -52,26 +52,12 @@ new Vue({
     loading1: false,
     loading2: true,
     loading3: false,
-    message: '你好世界',
     selectedTab: 'first',
     selected: ['item2', 'item3']
   },
   mounted() {
   },
   methods: {
-    // onInput(event) {
-    //   console.log(event.target.value)
-    // },
-    // onChange(event) {
-    //   console.log(event.target.value)
-    // },
-    // onFocus(event) {
-    //   console.log(event.target.value)
-    // },
-    // onBlur(event) {
-    //   console.log(event.target.value)
-    // }
-
     // showToast(position) {
     //   this.$toast(`时上了飞九分零四-${parseInt(Math.random() * 100)}`, {
     //     autoClose: true,
