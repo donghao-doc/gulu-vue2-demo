@@ -20,42 +20,42 @@ module.exports = {
         sidebarDepth: 1,
         children: [
           {
-            title: '按钮',
+            title: 'Button - 按钮',
             path: '/components/Button.md',
             sidebarDepth: 2,
           },
           {
-            title: '输入框',
+            title: 'Input - 输入框',
             path: '/components/Input.md',
             sidebarDepth: 2,
           },
           {
-            title: '网格',
+            title: 'Grid - 网格',
             path: '/components/Grid.md',
             sidebarDepth: 2,
           },
           {
-            title: '布局',
+            title: 'Layout - 布局',
             path: '/components/Layout.md',
             sidebarDepth: 2,
           },
           {
-            title: 'Toast',
+            title: 'Toast - 弹出提示框',
             path: '/components/Toast.md',
             sidebarDepth: 2,
           },
           {
-            title: '标签页',
+            title: 'Tabs - 标签',
             path: '/components/Tabs.md',
             sidebarDepth: 2,
           },
           {
-            title: '弹出层',
+            title: 'Popover - 弹出层',
             path: '/components/Popover.md',
             sidebarDepth: 2,
           },
           {
-            title: '手风琴',
+            title: 'Collapse - 手风琴',
             path: '/components/Collapse.md',
             sidebarDepth: 2,
           }
