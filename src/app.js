@@ -58,20 +58,6 @@ new Vue({
   mounted() {
   },
   methods: {
-    // showToast(position) {
-    //   this.$toast(`时上了飞九分零四-${parseInt(Math.random() * 100)}`, {
-    //     autoClose: true,
-    //     closeDelay: 2,
-    //     position,
-    //     closeButton: {
-    //       text: '关闭',
-    //       callback(toast) {
-    //         toast.log()
-    //       }
-    //     }
-    //   })
-    // },
-
     xyz() {
       console.log('xxxxxxxx')
     }
