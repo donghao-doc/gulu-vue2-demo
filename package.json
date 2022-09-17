@@ -1,6 +1,6 @@
 {
   "name": "gulu-vue2",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "description": "用 Vue2 做的 UI 框架",
   "main": "dist/index.js",
   "scripts": {
