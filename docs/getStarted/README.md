@@ -8,10 +8,11 @@
     }
     ```
 
-2. 引入组件
+2. 引入组件及样式
 
    ```javascript
    import { Button } from 'gulu-vue2'
+   import 'gulu-vue2/dist/index.css'
    ```
 
 3. 注册组件
