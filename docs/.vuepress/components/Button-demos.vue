@@ -47,13 +47,13 @@ export default {
       loading2: true,
       code1: '<g-button>默认按钮</g-button>',
       code2: `
-        <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-      `.replace(/ /g, '').trim(),
+        <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
+        <g-button icon="settings" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
+      `.replace(/^ {8}/gm, '').trim(),
       code3: `
         <g-button icon="settings" icon-position="left">按钮</g-button>
         <g-button icon="settings" icon-position="right">按钮</g-button>
-      `.replace(/ /g, '').trim(),
+      `.replace(/^ {8}/gm, '').trim(),
       code4: `
         <g-button-group>
           <g-button icon="left">上一页</g-button>
