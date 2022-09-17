@@ -54,11 +54,4 @@ new Vue({
     loading3: false,
     selected: ['item2', 'item3']
   },
-  mounted() {
-  },
-  methods: {
-    xyz() {
-      console.log('xxxxxxxx')
-    }
-  }
 })
