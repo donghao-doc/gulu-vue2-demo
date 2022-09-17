@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速上手 | 轱辘 UI</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="一个好用的 UI 框架">
+    
+    <link rel="preload" href="/gulu-vue2/assets/css/0.styles.8606bcb5.css" as="style"><link rel="preload" href="/gulu-vue2/assets/js/app.0489becd.js" as="script"><link rel="preload" href="/gulu-vue2/assets/js/2.f1b72e70.js" as="script"><link rel="preload" href="/gulu-vue2/assets/js/25.a8b50968.js" as="script"><link rel="prefetch" href="/gulu-vue2/assets/js/10.b3cb723a.js"><link rel="prefetch" href="/gulu-vue2/assets/js/11.e5495829.js"><link rel="prefetch" href="/gulu-vue2/assets/js/12.c53ef19f.js"><link rel="prefetch" href="/gulu-vue2/assets/js/13.8d31745d.js"><link rel="prefetch" href="/gulu-vue2/assets/js/14.c5677d25.js"><link rel="prefetch" href="/gulu-vue2/assets/js/15.999ba418.js"><link rel="prefetch" href="/gulu-vue2/assets/js/16.1bcbd636.js"><link rel="prefetch" href="/gulu-vue2/assets/js/17.1a46b68b.js"><link rel="prefetch" href="/gulu-vue2/assets/js/18.7ad75a27.js"><link rel="prefetch" href="/gulu-vue2/assets/js/19.3ea47d1a.js"><link rel="prefetch" href="/gulu-vue2/assets/js/20.0014d694.js"><link rel="prefetch" href="/gulu-vue2/assets/js/21.9d6002e2.js"><link rel="prefetch" href="/gulu-vue2/assets/js/22.1c3ed6a7.js"><link rel="prefetch" href="/gulu-vue2/assets/js/23.71a952f8.js"><link rel="prefetch" href="/gulu-vue2/assets/js/24.b25d935f.js"><link rel="prefetch" href="/gulu-vue2/assets/js/26.f038e661.js"><link rel="prefetch" href="/gulu-vue2/assets/js/3.56737757.js"><link rel="prefetch" href="/gulu-vue2/assets/js/4.f04e4227.js"><link rel="prefetch" href="/gulu-vue2/assets/js/5.1d9468e9.js"><link rel="prefetch" href="/gulu-vue2/assets/js/6.9765cee7.js"><link rel="prefetch" href="/gulu-vue2/assets/js/7.4f5e636d.js"><link rel="prefetch" href="/gulu-vue2/assets/js/8.cd0fbb17.js"><link rel="prefetch" href="/gulu-vue2/assets/js/9.0454796a.js">
+    <link rel="stylesheet" href="/gulu-vue2/assets/css/0.styles.8606bcb5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/gulu-vue2/" class="home-link router-link-active"><!----> <span class="site-name">轱辘 UI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/gulu-vue2/install/" class="sidebar-link">安装</a></li><li><a href="/gulu-vue2/getStarted/" aria-current="page" class="active sidebar-link">快速上手</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/gulu-vue2/components/" class="sidebar-heading clickable"><span>组件</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速上手"><a href="#快速上手" class="header-anchor">#</a> 快速上手</h1> <ol><li><p>使用本框架前，建议在 CSS 中开启 border-box，如：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">*, *::before, *::after</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>引入组件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'gulu-vue2'</span>
+</code></pre></div></li> <li><p>注册组件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'ComponentName'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'g-button'</span><span class="token operator">:</span> Button<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/gulu-vue2/install/" class="prev">
+        安装
+      </a></span> <span class="next"><a href="/gulu-vue2/components/Button.html">
+        Button - 按钮
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/gulu-vue2/assets/js/app.0489becd.js" defer></script><script src="/gulu-vue2/assets/js/2.f1b72e70.js" defer></script><script src="/gulu-vue2/assets/js/25.a8b50968.js" defer></script>
+  </body>
+</html>
