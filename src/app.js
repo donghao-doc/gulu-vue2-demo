@@ -52,7 +52,6 @@ new Vue({
     loading1: false,
     loading2: true,
     loading3: false,
-    selectedTab: 'first',
     selected: ['item2', 'item3']
   },
   mounted() {
